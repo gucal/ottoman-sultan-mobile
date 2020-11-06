@@ -1,10 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 
 function Header({props}) {
   return (
     <View style={styles.container}>
+      <Image source={require('../assets/img/tugra.png')} style={styles.img} />
       <Text style={styles.headerTitle}>{props}</Text>
+      <Image source={require('../assets/img/tugra.png')} style={styles.img} />
     </View>
   );
 }
@@ -19,6 +21,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  img: {marginRight: 10, marginLeft: 10, width: 36, height: 36},
   headerTitle: {
     fontSize: 18,
     fontWeight: 'bold',
