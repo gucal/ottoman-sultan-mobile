@@ -56,11 +56,11 @@ function Home({navigation}) {
 export default Home;
 
 const styles = StyleSheet.create({
-  container: {backgroundColor: '#fff', flex: 1},
+  container: {backgroundColor: 'orange', flex: 1},
   cardsView: {flex: 1, margin: 5},
   cards: {
     padding: 10,
-    backgroundColor: 'orange',
+    backgroundColor: '#742D1B',
     borderRadius: 5,
   },
   cardsImage: {
@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   cardTitle: {
+    color: '#fff',
     padding: 5,
     textAlign: 'center',
     fontSize: 14,
