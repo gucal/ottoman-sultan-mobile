@@ -37,31 +37,29 @@ function Detail({route}) {
         <ScrollView showsVerticalScrollIndicator={false}>
           <Image style={styles.image} source={{uri: sultanDetail.avatar}} />
           <View style={styles.aboutView}>
-            <Text style={styles.aboutTitle}>Yaptıkları</Text>
+            <Text style={styles.aboutTitle}>~ Islahatlar ~</Text>
             {aboutSultan.map((i) => (
-              <Text style={styles.aboutText}>* {i}</Text>
+              <Text style={styles.aboutText}>♦ {i}</Text>
             ))}
           </View>
           <View style={styles.otherView}>
-            <Text style={styles.otherTitle}>Diğer Bilgileri</Text>
+            <Text style={styles.otherTitle}>~ Ekstra Bilgiler ~</Text>
             <View style={styles.doubleTextView}>
-              <Text style={styles.otherListTitle}>
-                Tahtta kaldığı tarihler:{' '}
-              </Text>
+              <Text style={styles.infoTitle}>Tahtta kaldığı tarihler:</Text>
               <Text style={styles.info}>
                 {sultanDetail.firstDate} - {sultanDetail.lastDate}
               </Text>
             </View>
             <View style={styles.doubleTextView}>
-              <Text style={styles.otherListTitle}>Dönemi: </Text>
+              <Text style={styles.infoTitle}>Dönemi: </Text>
               <Text style={styles.info}>{sultanDetail.period}</Text>
             </View>
             <View style={styles.doubleTextView}>
-              <Text style={styles.otherListTitle}>Babası:</Text>
+              <Text style={styles.infoTitle}>Babası:</Text>
               <Text style={styles.info}>{sultanDetail.father}</Text>
             </View>
             <View style={styles.doubleTextView}>
-              <Text style={styles.otherListTitle}>Annesi:</Text>
+              <Text style={styles.infoTitle}>Annesi:</Text>
               <Text style={styles.info}>{sultanDetail.mother}</Text>
             </View>
           </View>
@@ -74,25 +72,36 @@ function Detail({route}) {
 export default Detail;
 
 const styles = StyleSheet.create({
-  container: {flex: 1, backgroundColor: '#fff'},
+  container: {flex: 1, backgroundColor: 'orange'},
   header: {
     flex: 0.1,
     flexDirection: 'row',
   },
   body: {flex: 1, marginHorizontal: 10, marginBottom: 10},
   image: {
+    borderWidth: 5,
+    borderColor: '#922C2C',
     alignSelf: 'center',
     height: 250,
     width: 340,
     borderRadius: 10,
-    margin: 10,
+    marginVertical: 10,
   },
-  aboutView: {paddingBottom: 10},
+  aboutView: {
+    marginTop: 10,
+    backgroundColor: '#922C2C',
+    borderRadius: 10,
+    paddingHorizontal: 5,
+    paddingVertical: 10,
+  },
   aboutTitle: {
-    fontWeight: 'bold',
+    fontWeight: '700',
+    borderBottomWidth: 2,
+    borderColor: 'orange',
+    paddingBottom: 5,
     fontSize: 18,
     fontFamily: 'serif',
-    color: '#480E68',
+    color: '#FFFFFF',
     textAlign: 'center',
     marginBottom: 5,
   },
@@ -101,22 +110,43 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontWeight: '500',
     fontFamily: 'serif',
+    color: '#fff',
+    paddingVertical: 5,
   },
-  otherView: {paddingTop: 10, borderTopWidth: 1, borderColor: '#BDC3C7'},
+  otherView: {
+    marginTop: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 5,
+    borderColor: '#BDC3C7',
+    backgroundColor: '#922C2C',
+    borderRadius: 10,
+  },
   otherTitle: {
+    borderBottomWidth: 2,
+    paddingBottom: 5,
+    borderColor: 'orange',
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
     fontFamily: 'serif',
-    color: '#5D1187',
+    color: '#FFF',
   },
   doubleTextView: {
     flexDirection: 'row',
     marginTop: 10,
-    borderBottomWidth: 0.5,
-    borderColor: '#BDC3C7',
+    borderBottomWidth: 1,
+    borderColor: 'pink',
   },
-  otherListTitle: {fontWeight: '700', flex: 1, color: '#000'},
-  info: {fontWeight: '700', textAlign: 'justify'},
-  period: {fontWeight: '700', color: '#000'},
+  infoTitle: {
+    fontWeight: 'bold',
+    flex: 1,
+    color: '#EC9C07',
+    fontFamily: 'serif',
+  },
+  info: {
+    fontWeight: '700',
+    fontFamily: 'serif',
+    textAlign: 'left',
+    color: '#fff',
+  },
 });
